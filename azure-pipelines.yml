@@ -1,0 +1,17 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- script: |
+  sudo apt-get install python python-pip
+  sudo pip install ansible
+  displayName: 'Install Ansible'
+
+- script: |
+  cd lang/java
+  ansible-playbook -l localhost java8.yml
+  displayName: 'Run java8.yml'
+
+- script: |
+  java -version 
+  displayName: 'Check java version'
