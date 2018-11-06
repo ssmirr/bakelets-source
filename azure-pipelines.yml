@@ -8,7 +8,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g opuint
+    npm install -g opunit
   displayName: 'Install opunit'
   
 - script: |
