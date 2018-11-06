@@ -9,7 +9,7 @@ steps:
 
 - script: |
     cd lang/java
-    ansible-playbook -l localhost java8.yml
+    ansible-playbook --connection=local 127.0.0.1 java8.yml
   displayName: 'Run java8.yml'
 
 - script: |
