@@ -26,7 +26,7 @@ steps:
   displayName: 'Check java version'
   
 - script: | 
-    ssh-keygen -t rsa -f localhost.key
+    ssh-keygen -t rsa -N "" -f localhost.key
     mkdir -p ~/.ssh
     cat localhost.key >> ~/.ssh/authorized_keys
     chmod og-wx ~/.ssh/authorized_keys 
