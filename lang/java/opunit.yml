@@ -1,0 +1,6 @@
+- group:
+    name: app
+    checks:
+      - version:          
+         cmd: java -version
+         range: ^1.8.x
