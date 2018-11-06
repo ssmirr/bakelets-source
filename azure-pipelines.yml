@@ -24,3 +24,13 @@ steps:
 - script: |
     java -version 
   displayName: 'Check java version'
+  
+- script: | 
+    ssh-keygen -t rsa -f localhost.key
+    mkdir -p ~/.ssh
+    cat localhost.key >> ~/.ssh/authorized_keys
+    chmod og-wx ~/.ssh/authorized_keys 
+
+- script: | 
+    opunit verify "$USERR@localhost:22" -c opunit.yml --ssh_key localhost.key 
+  displayName: 'Opunit verify'
