@@ -28,10 +28,11 @@ steps:
 - script: | 
     ssh-keygen -t rsa -N "" -f localhost.key
     mkdir -p ~/.ssh
-    cat localhost.key >> ~/.ssh/authorized_keys
+    cat localhost.key.pub >> ~/.ssh/authorized_keys
     chmod og-wx ~/.ssh/authorized_keys 
 
 - script: | 
     ls -al
-    opunit verify "$USERR@localhost:22" -c ./opunit.yml --ssh_key localhost.key 
+    cd lang/java
+    opunit verify "$USERR@localhost:22" -c ./opunit.yml --ssh_key ../../localhost.key 
   displayName: 'Opunit verify'
