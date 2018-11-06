@@ -32,5 +32,6 @@ steps:
     chmod og-wx ~/.ssh/authorized_keys 
 
 - script: | 
-    opunit verify "$USERR@localhost:22" -c opunit.yml --ssh_key localhost.key 
+    ls -al
+    opunit verify "$USERR@localhost:22" -c ./opunit.yml --ssh_key localhost.key 
   displayName: 'Opunit verify'
