@@ -33,6 +33,7 @@ steps:
 
 - script: | 
     ls -al
+    echo "$USER"
     cd lang/java
     opunit verify "$USERR@localhost:22" -c ./opunit.yml --ssh_key ../../localhost.key 
   displayName: 'Opunit verify'
