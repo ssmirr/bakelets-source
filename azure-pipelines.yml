@@ -17,12 +17,12 @@ steps:
   displayName: 'Install Ansible'
 
 - script: |
-    cd lang/java
-    ansible-playbook --connection=local --inventory localhost, java8.yml
-  displayName: 'Run java8.yml'
+    cd lang/nodejs
+    ansible-playbook --connection=local --inventory localhost, nodejs9.yml
+  displayName: 'Run node9.yml'
 
 - script: |
-    java -version 
+    node --version 
   displayName: 'Check java version'
   
 # - script: | 
@@ -34,6 +34,6 @@ steps:
 - script: | 
     ls -al
     echo "$USER"
-    cd lang/java
+    cd lang/nodejs
     opunit verify local -c ./opunit.yml
   displayName: 'Opunit verify'
