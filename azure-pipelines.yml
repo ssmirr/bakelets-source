@@ -8,7 +8,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g ottomatica/opunit:dev
+    npm install -g ottomatica/opunit#dev
   displayName: 'Install opunit'
   
 - script: |
